@@ -1,16 +1,17 @@
 # test-tools
 
-## Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
+### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
 
 Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
 
-** API (Application Programming Interface): **
+**API (Application Programming Interface):**
+
 É uma interface que conecta dois programas, realizando a comunicação entre eles e especificando como seus softwares devem interagir.
 
-Webservices:
+##### Webservices: #####
 São APIs que se comunicam por meio de redes e podem ser combinados para a execução de operações complexas, utilizando principalmente o HTTP (Hyper Text Transfer Protocol).
 
-SOAP (Simple Object Access Protocol):
+##### SOAP (Simple Object Access Protocol): #####
 É um protocolo elaborado para facilitar a chamada remota de funções via Internet. O SOAP define também um padrão chamado WSDL que descreve os objetos e métodos disponíveis que retornam XML acessíveis através da Web.
 
 Vantagens:
@@ -19,7 +20,7 @@ Trabalha melhor com sistemas distribuídos, pois não trabalha com comunicação
 O arquivo WSDL pode gerar um certo tipo de automação quando usado com determinadas ferramentas;
 Utiliza formato XML.
 
-REST (REpresentational State Transfer):
+##### REST (REpresentational State Transfer): #####
 Consiste em princípios/regras/constraints que, quando seguidas, permitem a criação de um projeto com interfaces bem definidas. Este padrão expressa o que desejamos realizar ao acessar um determinado endereço, usando verbos específicos (GET, POST, PUT, DELETE) para URLs específicas e usando dados padronizados, quando necessário.
 
 Vantagens:
@@ -32,9 +33,9 @@ Utiliza formato JSON (principal), YAML, XML.
 
 Obs: aplicações que utilizam o conceito REST são chamadas de RESTful.
 
-MOCK:
+##### MOCK: #####
 São respostas que simulam o comportamento de serviços de forma controlada. São normalmente criados para testar o comportamento de uma aplicação.
- 
+
 FERRAMENTA SOAPUI: (https://www.soapui.org/)
 Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.
 
