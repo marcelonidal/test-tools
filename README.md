@@ -4,7 +4,7 @@
 
 Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
 
-> API (Application Programming Interface):
+** API (Application Programming Interface): **
 É uma interface que conecta dois programas, realizando a comunicação entre eles e especificando como seus softwares devem interagir.
 
 Webservices:
