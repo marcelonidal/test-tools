@@ -1,17 +1,17 @@
 # test-tools
 
-### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI ###
+### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
 
 Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
 
-### <ins>API (Application Programming Interface):</ins> ###
+### <ins>API (Application Programming Interface):</ins>
 
 É uma interface que conecta dois programas, realizando a comunicação entre eles e especificando como seus softwares devem interagir.
 
-##### Webservices: #####
+##### Webservices:
 São APIs que se comunicam por meio de redes e podem ser combinados para a execução de operações complexas, utilizando principalmente o HTTP (Hyper Text Transfer Protocol).
 
-##### SOAP (Simple Object Access Protocol): #####
+##### SOAP (Simple Object Access Protocol):
 É um protocolo elaborado para facilitar a chamada remota de funções via Internet. O SOAP define também um padrão chamado WSDL que descreve os objetos e métodos disponíveis que retornam XML acessíveis através da Web.
 
 Vantagens:
@@ -20,8 +20,8 @@ Trabalha melhor com sistemas distribuídos, pois não trabalha com comunicação
 O arquivo WSDL pode gerar um certo tipo de automação quando usado com determinadas ferramentas;
 Utiliza formato XML.
 
-##### REST (REpresentational State Transfer): #####
-Consiste em princípios/regras/constraints que, quando seguidas, permitem a criação de um projeto com interfaces bem definidas. Este padrão expressa o que desejamos realizar ao acessar um determinado endereço, usando verbos específicos (GET, POST, PUT, DELETE) para URLs específicas e usando dados padronizados, quando necessário.
+##### REST (REpresentational State Transfer):
+Consiste em princípios, regras, constraints que, quando seguidas, permitem a criação de um projeto com interfaces bem definidas. Este padrão expressa o que desejamos realizar ao acessar um determinado endereço, usando verbos específicos (GET, POST, PUT, DELETE) para URLs específicas e usando dados padronizados, quando necessário.
 
 Vantagens:
 Melhor curva de aprendizado;
@@ -36,27 +36,28 @@ Obs: aplicações que utilizam o conceito REST são chamadas de RESTful.
 ##### MOCK: #####
 São respostas que simulam o comportamento de serviços de forma controlada. São normalmente criados para testar o comportamento de uma aplicação.
 
-### <ins>FERRAMENTA SOAPUI: (https://www.soapui.org/)</ins> ###
+### <ins>FERRAMENTA SOAPUI: (https://www.soapui.org/)</ins>
 Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.
 
 1. Testando serviços:
 
-	a. Para começarmos vamos testar o serviço dos correios (SOAP) e por isso iremos selecionar o ícone SOAP abaixo: 
+	a. Para começarmos vamos testar o serviço dos correios (SOAP) e por isso iremos selecionar o ícone SOAP abaixo:
 	![soap1](img/sp1.png)
  	
 	b. Dê um nome para o projeto e cole a url do serviço:
 
-	wsdl: http://webservice.correios.com.br/service/rastro/Rastro.wsdl 
-	![soap1](img/sp2.png)
+	wsdl: http://webservice.correios.com.br/service/rastro/Rastro.wsdl
+
+	![soap2](img/sp2.png)
 	
 	c. Preencha os dados conforme a documentação e consulte o serviço: 
- 	![soap1](img/sp3.png)
+ 	![soap3](img/sp3.png)
 
-	>[!NOTE]
-	>clique no ícone play para realizar a consulta.
+>[!NOTE]
+>clique no ícone play para realizar a consulta.
 
-	Documentação dos Correios:
-	(https://www.correios.com.br/enviar-e-receber/precisa-de-ajuda/manual_rastreamentoobjetosws.pdf)
+Documentação dos Correios:
+[https://www.correios.com.br/enviar-e-receber/precisa-de-ajuda/manual_rastreamentoobjetosws.pdf](https://www.correios.com.br/atendimento/developers/arquivos/manual-para-integracao-via-web-services-sigep-web)
 
 2. Mockando serviços:
 
