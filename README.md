@@ -1,10 +1,10 @@
 # test-tools
 
-### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
+### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI ###
 
 Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
 
-**API (Application Programming Interface):**
+### <ins>API (Application Programming Interface):</ins> ###
 
 É uma interface que conecta dois programas, realizando a comunicação entre eles e especificando como seus softwares devem interagir.
 
@@ -36,70 +36,73 @@ Obs: aplicações que utilizam o conceito REST são chamadas de RESTful.
 ##### MOCK: #####
 São respostas que simulam o comportamento de serviços de forma controlada. São normalmente criados para testar o comportamento de uma aplicação.
 
-FERRAMENTA SOAPUI: (https://www.soapui.org/)
+### <ins>FERRAMENTA SOAPUI: (https://www.soapui.org/)</ins> ###
 Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.
 
-1-	Testando serviços:
+1. Testando serviços:
 
-a-	Para começarmos vamos testar o serviço dos correios (SOAP) e por isso iremos selecionar o ícone SOAP abaixo: 
+	a. Para começarmos vamos testar o serviço dos correios (SOAP) e por isso iremos selecionar o ícone SOAP abaixo: 
+	![soap1](img/sp1.png)
+ 	
+	b. Dê um nome para o projeto e cole a url do serviço:
+
+	wsdl: http://webservice.correios.com.br/service/rastro/Rastro.wsdl 
+	![soap1](img/sp2.png)
+	
+	c. Preencha os dados conforme a documentação e consulte o serviço: 
+ 	![soap1](img/sp3.png)
+
+	>[!NOTE]
+	>clique no ícone play para realizar a consulta.
+
+	Documentação dos Correios:
+	(https://www.correios.com.br/enviar-e-receber/precisa-de-ajuda/manual_rastreamentoobjetosws.pdf)
+
+2. Mockando serviços:
+
+a. Crie um novo projeto vazio clicando em Empty e de um nome para o projeto:
  
 
-b-	Dê um nome para o projeto e cole a url do serviço:
-
-wsdl: http://webservice.correios.com.br/service/rastro/Rastro.wsdl 
+b. Crie um Rest MockService:
  
 
-c-	Preencha os dados conforme a documentação e consulte o serviço: 
- 
-Obs: clique no ícone para realizar a consulta. 
-Documentação dos Correios:
-(https://www.correios.com.br/enviar-e-receber/precisa-de-ajuda/manual_rastreamentoobjetosws.pdf)
-
-2-	Mockando serviços:
-
-a-	Crie um novo projeto vazio clicando em Empty e de um nome para o projeto:
+c. De um nome para o Mock:
  
 
-b-	Crie um Rest MockService:
- 
-
-c-	De um nome para o Mock:
- 
-
-d-	Agora podemos configurar em qual porta o serviço irá rodar, e qual o caminho de acesso:
+d. Agora podemos configurar em qual porta o serviço irá rodar, e qual o caminho de acesso:
  
 
 Obs: com as configurações atuais o nosso mock funcionará no localhost, porta 8080. URL: http://localhost:8080
-e-	Clique com o segundo botão do mouse no TestServices e adicione uma ação:
+e. Clique com o segundo botão do mouse no TestServices e adicione uma ação:
  
 
-f-	Adicione o método que deseja "mockar" e qual o nome do serviço (buscaEventos):
+f. Adicione o método que deseja "mockar" e qual o nome do serviço (buscaEventos):
  
 
-g-	Realize uma consulta com sucesso no serviço original (correios) e salve a resposta do serviço para poder usar posteriormente.
+g. Realize uma consulta com sucesso no serviço original (correios) e salve a resposta do serviço para poder usar posteriormente.
 
-h-	Clique com o segundo botão do mouse em buscaEventos e adicione um Mock Response:
+h. Clique com o segundo botão do mouse em buscaEventos e adicione um Mock Response:
  
  
-i-	De um nome para o response, escolha o código de retorno e em Content adicione a resposta desejada:
+i. De um nome para o response, escolha o código de retorno e em Content adicione a resposta desejada:
  
 
 Obs: como este é um serviço SOAP, em Media type vamos escolher application/xml.
 
-j-	Clique no ícone para executar o mock:
+j. Clique no ícone para executar o mock:
  
 
 Pronto! Clique no para encerrar o mock.
  
-3-	Conteúdo Adicional:
+3. Conteúdo Adicional:
 O SOAPUI é uma ferramenta bem completa, onde é possível adicionar parâmetros e realizar scripts. 
 
-3.1- Segue abaixo um exemplo de delay, útil para testar a demora de um serviço:
+3.1. Segue abaixo um exemplo de delay, útil para testar a demora de um serviço:
 
-a-	Duplo clique em TestService, clique em OnRequest Script (Salve o projeto para aparecer esta opção):
+a. Duplo clique em TestService, clique em OnRequest Script (Salve o projeto para aparecer esta opção):
  
 
-b-	Adicione as linhas de código abaixo:
+b. Adicione as linhas de código abaixo:
  
 
 Pronto, agora toda vez que chamar o buscaEventos ele esperará 8 segundos para responder.
