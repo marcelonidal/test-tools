@@ -7,8 +7,8 @@
 - [Postman](#postman)
 - [SoapUI](#soap-ui)
 - [Consideracoes Finais](#consideracoes)
----
 
+---
 ### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
 
 Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
@@ -157,7 +157,7 @@ c. De um nome para o ambiente e crie as variáveis necessárias:<br>
 
 d. Selecione nosso environment:<br>
    ![pst16](img/pst16.png)<br>
- 
+
 e. Adicione o teste para preencher nossa variável:<br>
 ```
 pm.test("access-token gerado", function () {
@@ -189,7 +189,7 @@ a. Clique em “New” e selecione “Mock Server”:<br>
 
 b. Adicione o “resource” (nome do serviço), escolha o método, o código da resposta e adicione o body:<br>
    ![pst21](img/pst21.png)<br>
- 
+
 c. Adicione o nome do mock e clique em “Create Mock Server”:<br>
    ![pst22](img/pst22.png)<br>
    
@@ -209,7 +209,7 @@ e. Adicione o “resource” que você criou, no caso:<br>
 https://suaurl.mock.pstmn.io/ObterContaCliente
 ```
 Mock pronto para ser consultado!<br>
- 
+
 f. Faça uma requisição GET e observe a resposta:<br>
    ![pst24](img/pst24.png)<br>
 
