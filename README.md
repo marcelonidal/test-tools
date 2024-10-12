@@ -78,7 +78,8 @@ c. Clique na aba Body, selecione a opção raw/XML e adicione o seguinte conteú
 
 d. Tudo pronto para realizarmos a consulta do serviço, mas antes devemos trocar o método para POST e aí sim clicar em Send, pois serviços SOAP necessitam deste método:<br>
    ![pst4](img/pst4.png)<br>
-
+   
+---
 #### 2. Testando serviços REST:
 Diferente do serviço SOAP, no serviço REST utilizaremos os métodos GET para pesquisar, POST para criar, PUT para atualizar e DELETE para deletar.<br>
 
@@ -95,10 +96,11 @@ https://swapi.co/api/
    
 >[!NOTE]  
 > Como vocês podem ver, o retorno foi um objeto JSON com o status 200 de sucesso.
- 
+
+---
 #### 3. Conteúdo Adicional:<br>
 
-##### 3.1. Requisições adicionando informações no Header e no Body:<br>
+##### 3.1. Requisições adicionando informações no Header e no Body:
 Para aprofundarmos um pouco mais no consumo de APIs REST, vamos usar o exemplo de um serviço da RCHLO, o Mailing. Antes de consumirmos o serviço principal, precisamos de uma autorização que nos é fornecida através da API de token:<br>
 
 a. Como pré-requisito, precisamos ir na aba Authorization e escolher o tipo de autorização básica, fornecer o usuário e senha, além de adicionar no body o tipo de credenciais:<br>
@@ -119,13 +121,13 @@ Body:<br>
 Resposta:<br>
    ![pst11](img/pst11.png)<br>
  
-##### 3.2. Adição de testes para validar o retorno de um serviço:<br>
+##### 3.2. Adição de testes para validar o retorno de um serviço:
 
-a-	Utilizaremos o serviço do W3schools para validar a temperatura, portanto clique na aba Tests depois de ter preenchido o body:
-  
+a. Utilizaremos o serviço do W3schools para validar a temperatura, portanto clique na aba Tests depois de ter preenchido o body:<br>
+   ![pst12](img/pst12.png)<br>
 
-b-	Agora vamos criar um teste com o código abaixo:
-
+b. Agora vamos criar um teste com o código abaixo:<br>
+```
 Importante: o Postman não trabalha com XML diretamente, por isso vamos converter o XML em JSON:
 var jsonObject = xml2Json(responseBody);
 
@@ -133,32 +135,31 @@ var jsonObject = xml2Json(responseBody);
 O código acima está comentado para não imprimir o valor, mas caso você precise saber o seu conteúdo, remova o comentário //
 
 tests["Nome do meu teste"] = jsonObject['soap:Envelope']['soap:Body'].FahrenheitToCelsiusResponse.FahrenheitToCelsiusResult === "37.7777777777778";
+```
 
-c-	Após adicionar o teste que simplesmente compara se o retorno é igual a 37,7 graus, clique em Send, aguarde o retorno e verifique que a validação passou com sucesso:
- 
-
-Pronto, agora você consegue realizar testes de validações para cada retorno de serviço.
-	
+c. Após adicionar o teste que simplesmente compara se o retorno é igual a 37,7 graus, clique em Send, aguarde o retorno e verifique que a validação passou com sucesso:<br>
+   ![pst13](img/pst13.png)<br>
+Pronto, agora você consegue realizar testes de validações para cada retorno de serviço.<br>
  
-3.3- Adicionando valor da resposta de um serviço no header de outro serviço:
-Antes de continuarmos, estamos entrando numa área mais avançada, onde precisaremos consultar a documentação do Postman:
-https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/
+##### 3.3. Adicionando valor da resposta de um serviço no header de outro serviço:
+Antes de continuarmos, estamos entrando numa área mais avançada, onde precisaremos consultar a documentação do Postman:<br>
+https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/<br>
 
-a-	Environment:
-Para passarmos dados de um serviço para o outro, necessitaremos da criação de um ambiente para salvar os valores da resposta do serviço.
-Como solução temos dois caminhos: prosseguir com a criação de uma varável global ou criar um ambiente específico, por exemplo TOKEN, que salvará o valor desejado. Neste exemplo utilizaremos variáveis dentro de um environment. 
+a. Environment:<br>
+Para passarmos dados de um serviço para o outro, necessitaremos da criação de um ambiente para salvar os valores da resposta do serviço.<br>
+Como solução temos dois caminhos: prosseguir com a criação de uma varável global ou criar um ambiente específico, por exemplo TOKEN, que salvará o valor desejado. Neste exemplo utilizaremos variáveis dentro de um environment.<br>
 
-b-	Para criar um environment, clique na catraca e clique em Add:
- 
+b. Para criar um environment, clique na catraca e clique em Add:<br>
+   ![pst14](img/pst14.png)<br>
 
-c-	De um nome para o ambiente e crie as variáveis necessárias:
- 
+c. De um nome para o ambiente e crie as variáveis necessárias:<br>
+   ![pst15](img/pst15.png)<br>
 
-d-	Selecione nosso environment:
- 
+d. Selecione nosso environment:<br>
+   ![pst16](img/pst16.png)<br>
  
-e-	Adicione o teste para preencher nossa variável:
-
+e. Adicione o teste para preencher nossa variável:<br>
+```
 pm.test("access-token gerado", function () {
     pm.response.to.have.status(201);
 });
@@ -169,17 +170,19 @@ Obtém o objeto com todos os valores da resposta
 
 pm.environment.set("tokenAtual", objJSON.access_token);
 Preenche a variável com o token
- 
+```
+   ![pst17](img/pst17.png)<br>
 
-f-	Para visualizar o console do Postman clique no ícone na parte de baixo, conforme imagem:
- 
+f. Para visualizar o console do Postman clique no ícone na parte de baixo, conforme imagem:<br>
+   ![pst18](img/pst18.png)<br>
 
-g-	Agora que já temos a varável populada no nosso ambiente vamos passar esse valor para o nosso outro serviço:
- 
+g. Agora que já temos a varável populada no nosso ambiente vamos passar esse valor para o nosso outro serviço:<br>
+   ![pst19](img/pst19.png)<br>
 
-Obs: como vocês podem ver, o valor foi passado para o header do outro serviço.
+>[!NOTE]  
+> Como vocês podem ver, o valor foi passado para o header do outro serviço.
  
-3.4- Criando Mock de serviços:
+##### 3.4- Criando Mock de serviços:
 
 a-	Clique em “New” e selecione “Mock Server”:
  
@@ -316,8 +319,9 @@ Clique na aba Pre-request Script e adicione o código acima.
 Obs: neste exemplo esperamos 5 segundos e depois realizamos a requisição.
 
 Adicionando depois da requisição:
-Clique na aba Tests e adicione o mesmo código. Neste caso específico, nada acontecerá, mas se houvessem mais requisições ocorreria o delay de 5 segundos entre a primeira requisição e a segunda. 
+Clique na aba Tests e adicione o mesmo código. Neste caso específico, nada acontecerá, mas se houvessem mais requisições ocorreria o delay de 5 segundos entre a primeira requisição e a segunda.
 
+---
 4-	Observações Finais:
 O postman possui esta funcionalidade de colocar o mock exposto na internet, mas ressalto que para que ele seja consumido no servidor do cliente, o mesmo deve ter acesso externo a internet.
 
@@ -328,12 +332,6 @@ https://learning.postman.com/docs/postman/api-documentation/documenting-your-api
 
 IMPORTANTE:
 Postman versão 7.23.0, build win32 10.0.18363 / x64
-
-
- 
-
-
-
 
 ---
 <a name="soap-ui"></a>
@@ -731,18 +729,18 @@ SOAPUI versão 5.5.0, build 20190211-1036
 ---
 <a name="consideracoes"></a>
 ### <ins>CONSIDERAÇÕES FINAIS</ins> - [**[indice]**](#home)
-Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.
+Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.<br>
 
-Este documento tem o objetivo de passar da melhor maneira possível como trabalhar com as ferramentas de testes.
+Este documento tem o objetivo de passar da melhor maneira possível como trabalhar com as ferramentas de testes.<br>
 
-Sobre o tema SOAPUI, abordamos como consumir serviços, criação de um mock simples, adicionar delay nas requisições, criar variáveis, passar informações de um serviço para o outro e criar testes;
+Sobre o tema SOAPUI, abordamos como consumir serviços, criação de um mock simples, adicionar delay nas requisições, criar variáveis, passar informações de um serviço para o outro e criar testes;<br>
 
-Já sobre o tema Postman, realizamos o consumo de serviços simples e complexos, criamos testes, passamos informações de um serviço para o outro através do ambiente, criamos mock público e privado e adicionamos delay entre as requisições. 
+Já sobre o tema Postman, realizamos o consumo de serviços simples e complexos, criamos testes, passamos informações de um serviço para o outro através do ambiente, criamos mock público e privado e adicionamos delay entre as requisições.<br>
 
-**CURSOS ONLINE:**
-SOAPUI: https://www.youtube.com/watch?v=mrxtd0wBGmw&list=PLhW3qG5bs-L-Bt9T_bnyflQ0Te4VgFhKF
+**CURSOS ONLINE:**<br>
+SOAPUI: https://www.youtube.com/watch?v=mrxtd0wBGmw&list=PLhW3qG5bs-L-Bt9T_bnyflQ0Te4VgFhKF<br>
 
-Postman: https://www.youtube.com/watch?v=juldrxDrSH0&list=PLhW3qG5bs-L-oT0GenwPLcJAPD_SiFK3C
+Postman: https://www.youtube.com/watch?v=juldrxDrSH0&list=PLhW3qG5bs-L-oT0GenwPLcJAPD_SiFK3C<br>
 
 <ins>Revisões:</ins>
 | Editor               |Versão | Data       |
