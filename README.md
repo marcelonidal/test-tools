@@ -1,10 +1,20 @@
 # test-tools
 
+<a name="home"></a>
+### Indice
+
+- [O que e API](#api)
+- [Postman](#postman)
+- [SoapUI](#soap-ui)
+- [Referencias](#referencias)
+---
+
 ### Tutorial de como utilizar as ferramentas de testes Postman e SOAPUI
 
 Antes de iniciarmos com as ferramentas, necessitamos de alguns conceitos de serviços:
 
-### <ins>API (Application Programming Interface):</ins>
+<a name="api"></a>
+### <ins>API (Application Programming Interface):</ins> - [**[indice]**](#home)
 
 É uma interface que conecta dois programas, realizando a comunicação entre eles e especificando como seus softwares devem interagir.
 
@@ -37,8 +47,19 @@ Obs: aplicações que utilizam o conceito REST são chamadas de RESTful.
 São respostas que simulam o comportamento de serviços de forma controlada. São normalmente criados para testar o comportamento de uma aplicação.
 
 ---
+<a name="postman"></a>
+### <ins>FFERRAMENTA POSTMAN: (https://www.postman.com/)</ins> - [**[indice]**](#home)
+Esta ferramenta também serve para testarmos serviços REST (*JSON), SOAP (XML) e realizarmos MOCKs para os serviços.
 
-### <ins>FERRAMENTA SOAPUI: (https://www.soapui.org/)</ins>
+#### 1. Testando serviços SOAP:
+
+a. Para começarmos vamos testar o serviço dos correios (SOAP) e por isso iremos selecionar o ícone SOAP abaixo:<br>
+   ![pst1](img/pst1.png)<br>
+
+
+---
+<a name="soap-ui"></a>
+### <ins>FERRAMENTA SOAPUI: (https://www.soapui.org/)</ins> - [**[indice]**](#home)
 Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.
 
 #### 1. Testando serviços:
