@@ -741,7 +741,7 @@ SOAPUI versão 5.5.0, build 20190211-1036
 ---
 <a name="consideracoes"></a>
 ### <ins>CONSIDERAÇÕES FINAIS</ins> - [**[indice]**](#home)
-Esta ferramenta serve tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.<br>
+Estas ferramentas servem tanto para testarmos serviços REST (*JSON) e SOAP (XML), como também realizarmos MOCKs para os serviços.<br>
 
 Este documento tem o objetivo de passar da melhor maneira possível como trabalhar com as ferramentas de testes.<br>
 
