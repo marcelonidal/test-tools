@@ -111,7 +111,7 @@ Body:<br>
    ![pst7](img/pst7.png)<br>
 Resposta:<br>
    ![pst8](img/pst8.png)<br>
- 
+
 b. Agora que já temos o token em mãos, vamos consumir o serviço de mailing informando no header o id, o token, o tipo de conteúdo e no body o cpf do cliente:<br>
 
 Header:<br>
@@ -184,153 +184,165 @@ g. Agora que já temos a varável populada no nosso ambiente vamos passar esse v
  
 ##### 3.4- Criando Mock de serviços:
 
-a-	Clique em “New” e selecione “Mock Server”:
- 
+a. Clique em “New” e selecione “Mock Server”:<br>
+   ![pst20](img/pst20.png)<br>
 
-b-	Adicione o “resource” (nome do serviço), escolha o método, o código da resposta e adicione o body:
- 
+b. Adicione o “resource” (nome do serviço), escolha o método, o código da resposta e adicione o body:<br>
+   ![pst21](img/pst21.png)<br>
  
-c-	Adicione o nome do mock e clique em “Create Mock Server”:
- 
+c. Adicione o nome do mock e clique em “Create Mock Server”:<br>
+   ![pst22](img/pst22.png)<br>
+   
+>[!NOTE]  
+> Não esqueça de marcar “Save the mock server URL...” para criar uma variável de ambiente com a URL.
 
-Obs: Não esqueça de marcar “Save the mock server URL...” para criar uma variável de ambiente com a URL.
+d. Ao finalizar ele indicará o EndPoint do serviço:<br>
+   ![pst23](img/pst23.png)<br>
 
-d-	Ao finalizar ele indicará o EndPoint do serviço:
- 
-
-Agora já possuímos a URL do nosso EndPoint:
+Agora já possuímos a URL do nosso EndPoint:<br>
+```
 https://suaurl.mock.pstmn.io/
- 
-e-	Adicione o “resource” que você criou, no caso:
+```
+
+e. Adicione o “resource” que você criou, no caso:<br>
+```
 https://suaurl.mock.pstmn.io/ObterContaCliente
-
-Mock pronto para ser consultado!
+```
+Mock pronto para ser consultado!<br>
  
-f-	Faça uma requisição GET e observe a resposta:
- 
+f. Faça uma requisição GET e observe a resposta:<br>
+   ![pst24](img/pst24.png)<br>
 
-g-	Utilizando a variável do environment ao invés da URL:
- 
+g. Utilizando a variável do environment ao invés da URL:<br>
+   ![pst25](img/pst25.png)<br>
 
-Obs: Se você clicou para criar a variável de ambiente, basta selecionar o environment e digitar direto o “resource”/ nome do serviço a ser retornado. Caso não tenha criado, será necessário criar um environment, uma variável e adicionar a URL fornecida na criação do servidor mock.
+>[!NOTE]  
+> Se você clicou para criar a variável de ambiente, basta selecionar o environment e digitar direto o “resource”/ nome do serviço a ser retornado. Caso não tenha criado, será necessário criar um environment, uma variável e adicionar a URL fornecida na criação do servidor mock.
 
-Observações:
-O mock do postman é baseado em modelos de respostas, caso você não as edite/ crie, o conteúdo do retorno sempre será um HTML.
+> [!IMPORTANT]
+> O mock do postman é baseado em modelos de respostas, caso você não as edite/ crie, o conteúdo do retorno sempre será um HTML.
+>
+> Por padrão o mock criado possui acesso público (qualquer pessoa com a URL pode realizar requisições).
 
-Por padrão o mock criado possui acesso público (qualquer pessoa com a URL pode realizar requisições).
+##### 3.5- Editando o modelo padrão:
+Se você criou o mock com sucesso, por padrão será gerado o modelo “Default”, e é neste modelo que você especificará o código de retorno, o tipo de dado etc. Para acessar o modelo siga os seguintes passos:<br>
 
-3.5- Editando o modelo padrão:
-Se você criou o mock com sucesso, por padrão será gerado o modelo “Default”, e é neste modelo que você especificará o código de retorno, o tipo de dado etc. Para acessar o modelo siga os seguintes passos:
+a. Selecione Examples conforme imagem e selecione o modelo Default:<br>
+   ![pst26](img/pst26.png)<br>
 
-a-	Selecione Examples conforme imagem e selecione o modelo Default:
- 
+b. É aqui que você define parâmetros no header da request ou response, bem como define o código de retorno e altera o nome do modelo. No nosso caso, vamos adicionar no header do response o tipo de dado JSON.<br>
+   ![pst27](img/pst27.png)<br>
 
-b-	É aqui que você define parâmetros no header da request ou response, bem como define o código de retorno e altera o nome do modelo. No nosso caso, vamos adicionar no header do response o tipo de dado JSON.
- 
+c. Segue exemplo de header para response JSON:<br>
+   ![pst28](img/pst28.png)<br>
 
-c-	Segue exemplo de header para response JSON:
- 
-
-d-	Resultado final da requisição após a alteração do modelo:
- 
+d. Resultado final da requisição após a alteração do modelo:<br>
+   ![pst29](img/pst29.png)<br>
  
-3.6- Tornando o mock privado:
-Antes de começarmos, ressalto que para tornarmos o mock privado necessitaremos da criação de um token na API do postman. Além disso, tanto faz criar um mock server como privado desde o início ou tornar o mock público em privado, o processo é basicamente o mesmo.
+##### 3.6- Tornando o mock privado:
+Antes de começarmos, ressalto que para tornarmos o mock privado necessitaremos da criação de um token na API do postman. Além disso, tanto faz criar um mock server como privado desde o início ou tornar o mock público em privado, o processo é basicamente o mesmo.<br>
 
-a-	Criando token para acesso:
-Nosso ponto de partida é acessar o link do dashboard web do postman:
-https://web.postman.co/workspaces?type=personal ou clicar em My Workspace/ All workspaces:
- 
+a. Criando token para acesso:<br>
+Nosso ponto de partida é acessar o link do dashboard web do postman:<br>
+https://web.postman.co/workspaces?type=personal ou clicar em My Workspace/ All workspaces:<br>
+   ![pst30](img/pst30.png)<br>
 
-Obs: caso você não tenha conta no postman, será necessário criá-la.
+>[!NOTE]  
+> Caso você não tenha conta no postman, será necessário criá-la.
 
-Agora clique em My Workspace:
- 
+Agora clique em My Workspace:<br>
+   ![pst31](img/pst31.png)<br>
 
-Selecione Integrations e clique em “Create na integration in this workplace”:
- 
-Em postman API, clique em View Details e após em Generate API Key:
- 
+Selecione Integrations e clique em “Create na integration in this workplace”:<br>
+   ![pst32](img/pst32.png)<br>
 
-Dê um nome a sua chave e clique em Generate API Key:
- 
+Em postman API, clique em View Details e após em Generate API Key:<br>
+   ![pst33](img/pst33.png)<br>
 
-Na próxima tela será apresentada a chave de autenticação:
- 
+Dê um nome a sua chave e clique em Generate API Key:<br>
+   ![pst34](img/pst34.png)<br>
 
-Observações:
+Na próxima tela será apresentada a chave de autenticação:<br>
+   ![pst35](img/pst35.png)<br>
 
-A chave só é exibida neste momento, portanto copie e salve o valor dela ou será necessário criar outra chave. 
+> [!IMPORTANT]
+> A chave só é exibida neste momento, portanto copie e salve o valor dela ou será necessário criar outra chave.
+>
+> O prazo de validade desta chave, por padrão, expira em 60 dias de inatividade, mas esse prazo pode ser alterado na opção API key settings:
+   ![pst36](img/pst36.png)<br>
+>[!NOTE]  
+> Chave criada, agora podemos voltar para a aplicação.
+
+b. Transformando mock público em privado:<br>
+Se você seguiu este tutorial e criou o mock público, siga os seguintes passos para transformá-lo em privado:<br>
+
+Dentro da aplicação, acesse a aba Collections e clique conforme a imagem:<br>
+   ![pst37](img/pst37.png)<br>
+
+Abrirá uma nova “janela” com as propriedades do mock, clique na aba Mocks e clique no ícone do lápis para editá-lo:<br>
+   ![pst38](img/pst38.png)<br>
+   
+Agora basta marcar “Make this mock server private” e clicar em save changes:<br>
+   ![pst39](img/pst39.png)<br>
+
+c. Criando mock privado:<br>
+Utilizando este passo-a-passo, quando chegar na tela abaixo, selecione “Make this mock server private”:<br>
+   ![pst40](img/pst40.png)<br>
  
-O prazo de validade desta chave, por padrão, expira em 60 dias de inatividade, mas esse prazo pode ser alterado na opção API key settings:
- 
+d. Adicionando o token no header da request:<br>
+Agora que já tornarmos o nosso mock privado e com a nossa chave de acesso em mãos, clique no ObterContaCliente para abrir a requisição e adicione no header o parâmetro conforme imagem:<br>
+   ![pst41](img/pst41.png)<br>
 
-Obs: chave criada, agora podemos voltar para a aplicação.
+>[!NOTE]  
+> Em key coloque x-api-key e em value coloque o valor do token que você gerou.
 
-b-	Transformando mock público em privado:
-Se você seguiu este tutorial e criou o mock público, siga os seguintes passos para transformá-lo em privado:
+Pronto, agora só quem tem o token conseguirá realizar requisições na URL do seu servidor mock.<br>
 
-Dentro da aplicação, acesse a aba Collections e clique conforme a imagem:
- 
+##### 3.7- Adicionando delay na requisição:
+Caso necessite testar o timeout de um serviço, por exemplo, podemos adicionar o delay de duas maneiras, uma via código e outra pela interface.<br>
 
-Abrirá uma nova “janela” com as propriedades do mock, clique na aba Mocks e clique no ícone do lápis para editá-lo:
- 
-Agora basta marcar “Make this mock server private” e clicar em save changes:
- 
-
-c-	Criando mock privado:
-Utilizando este passo-a-passo, quando chegar na tela abaixo, selecione “Make this mock server private”:
- 
+a. Adicionando delay pela interface:<br>
+Clique no ícone conforme imagem para abrir as propriedades do mock:<br>
+   ![pst42](img/pst42.png)<br>
  
-d-	Adicionando o token no header da request:
-Agora que já tornarmos o nosso mock privado e com a nossa chave de acesso em mãos, clique no ObterContaCliente para abrir a requisição e adicione no header o parâmetro conforme imagem:
- 
+Agora clique em Run para abrir a janela de testes e adicione o tempo em milissegundos do delay:<br>
+   ![pst43](img/pst43.png)<br>
 
-Obs: em key coloque x-api-key e em value coloque o valor do token que você gerou.
+>[!NOTE]  
+> Clique na opção “Save responses”, assim você poderá ver os resultados das requisições.
 
-Pronto, agora só quem tem o token conseguirá realizar requisições na URL do seu servidor mock.
-
-3.7- Adicionando delay na requisição:
-Caso necessite testar o timeout de um serviço, por exemplo, podemos adicionar o delay de duas maneiras, uma via código e outra pela interface.
-
-a-	Adicionando delay pela interface:
-Clique no ícone conforme imagem para abrir as propriedades do mock:
- 
+Clique em Run MockWebService e aguarde a resposta:<br>
+   ![pst44](img/pst44.png)<br>
+   
+>[!NOTE]  
+> Neste exemplo, ele aguarda o delay e faz a requisição, mas o tempo de resposta não é afetado. Aqui também é possível realizar os testes de toda uma API e/ ou todas as possibilidades do servidor mock de uma só vez.
  
-Agora clique em Run para abrir a janela de testes e adicione o tempo em milissegundos do delay:
- 
-
-Obs: clique na opção “Save responses”, assim você poderá ver os resultados das requisições.
-
-Clique em Run MockWebService e aguarde a resposta:
- 
-
-Obs: neste exemplo, ele aguarda o delay e faz a requisição, mas o tempo de resposta não é afetado. Aqui também é possível realizar os testes de toda uma API e/ ou todas as possibilidades do servidor mock de uma só vez.
- 
-b-	Adicionando delay por código:
-Antes de adicionarmos o código do delay, temos duas possibilidades: adicionar ele antes da requisição ou após a requisição. 
-
+b. Adicionando delay por código:<br>
+Antes de adicionarmos o código do delay, temos duas possibilidades: adicionar ele antes da requisição ou após a requisição.<br>
+```
 setTimeout(function(){},5000);
+```
 
-Adicionando antes da requisição (mesmo resultado do delay via interface gráfica):
-Clique na aba Pre-request Script e adicione o código acima.
- 
+Adicionando antes da requisição (mesmo resultado do delay via interface gráfica):<br>
+Clique na aba Pre-request Script e adicione o código acima.<br>
+   ![pst45](img/pst45.png)<br>
 
-Obs: neste exemplo esperamos 5 segundos e depois realizamos a requisição.
+>[!NOTE]  
+> Neste exemplo esperamos 5 segundos e depois realizamos a requisição.
 
-Adicionando depois da requisição:
+<ins>Adicionando depois da requisição:</ins>
 Clique na aba Tests e adicione o mesmo código. Neste caso específico, nada acontecerá, mas se houvessem mais requisições ocorreria o delay de 5 segundos entre a primeira requisição e a segunda.
 
 ---
-4-	Observações Finais:
-O postman possui esta funcionalidade de colocar o mock exposto na internet, mas ressalto que para que ele seja consumido no servidor do cliente, o mesmo deve ter acesso externo a internet.
+#### 4. Observações Finais:
+O postman possui esta funcionalidade de colocar o mock exposto na internet, mas ressalto que para que ele seja consumido no servidor do cliente, o mesmo deve ter acesso externo a internet.<br>
 
-O mock do postman possui limitação de 1000 requests ao mês.
+O mock do postman possui limitação de 1000 requests ao mês.<br>
 
-Também é possível gerar uma documentação do webservice, para isto basta seguir o passo-a-passo:
-https://learning.postman.com/docs/postman/api-documentation/documenting-your-api/
+Também é possível gerar uma documentação do webservice, para isto basta seguir o passo-a-passo:<br>
+https://learning.postman.com/docs/postman/api-documentation/documenting-your-api/<br>
 
-IMPORTANTE:
+IMPORTANTE:<br>
 Postman versão 7.23.0, build win32 10.0.18363 / x64
 
 ---
@@ -715,15 +727,15 @@ for (i = 0; i < nodeNames.size(); i++) {
 
 ### 4. Observações Finais:
 
-O mock só funciona localmente, para funcionar na aplicação o SOAPUI deve estar instalado no servidor de testes.
+O mock só funciona localmente, para funcionar na aplicação o SOAPUI deve estar instalado no servidor de testes.<br>
 
-O exemplo de mock trabalhado é simples, e não tivemos a necessidade de passar parâmetros, adicionar informações no header, etc.
+O exemplo de mock trabalhado é simples, e não tivemos a necessidade de passar parâmetros, adicionar informações no header, etc.<br>
 
-Também vimos como gerar documentação, criar variáveis, passar valores, realizar testes e scripts. 
+Também vimos como gerar documentação, criar variáveis, passar valores, realizar testes e scripts.<br>
 
-Por último, esta ferramenta possui o teste de carga, onde utilizamos para validar se um webservice, site, banco de dados estão aguentando um determinado tráfego. 
+Por último, esta ferramenta possui o teste de carga, onde utilizamos para validar se um webservice, site, banco de dados estão aguentando um determinado tráfego.<br>
 
-IMPORTANTE:
+IMPORTANTE:<br>
 SOAPUI versão 5.5.0, build 20190211-1036
 
 ---
