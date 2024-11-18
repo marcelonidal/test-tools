@@ -268,8 +268,9 @@ Na próxima tela será apresentada a chave de autenticação:<br>
 > [!IMPORTANT]
 > A chave só é exibida neste momento, portanto copie e salve o valor dela ou será necessário criar outra chave.
 >
-> O prazo de validade desta chave, por padrão, expira em 60 dias de inatividade, mas esse prazo pode ser alterado na opção API key settings:
-   ![pst36](img/pst36.png)<br>
+> O prazo de validade desta chave, por padrão, expira em 60 dias de inatividade, mas esse prazo pode ser alterado na opção API key settings:<br>
+> ![pst36](img/pst36.png)
+
 >[!NOTE]  
 > Chave criada, agora podemos voltar para a aplicação.
 
@@ -288,7 +289,7 @@ Agora basta marcar “Make this mock server private” e clicar em save changes:
 c. Criando mock privado:<br>
 Utilizando este passo-a-passo, quando chegar na tela abaixo, selecione “Make this mock server private”:<br>
    ![pst40](img/pst40.png)<br>
- 
+
 d. Adicionando o token no header da request:<br>
 Agora que já tornarmos o nosso mock privado e com a nossa chave de acesso em mãos, clique no ObterContaCliente para abrir a requisição e adicione no header o parâmetro conforme imagem:<br>
    ![pst41](img/pst41.png)<br>
